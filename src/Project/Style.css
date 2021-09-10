@@ -1,0 +1,64 @@
+*{
+    box-sizing: border-box;
+    /* background-color: aqua; */
+}
+.container{
+    display: flex;
+    height: auto;
+    /* width: 100%; */
+    border: 2px solid red;
+    text-align: center;
+    justify-content: space-between;
+}
+#header{
+    height: 200px;
+    width: 100%;
+    display: grid;
+    background-image:linear-gradient(to right,rgb(232, 241, 243) 10%,rgb(250, 252, 251),rgb(245, 245, 236));
+    /* border: 5px solid black; */
+    text-align: center;    
+}
+#animals{
+    float: left;
+    margin-top: 50px;
+    margin-left: 10%;
+    background-color: white;
+    height: 50px;
+    font-size: 24px;
+    width: auto;
+    font-weight:lighter;
+}
+#but{
+    border: black solid 1px;
+    float: right;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-right: 20%;
+    background-color: white;
+    height: 50px;
+    width: 150px;
+}
+.categoryNone{
+    display: none;
+}
+.category{
+    float: left;
+    margin-top: 50px;
+    margin-left: 10%;
+    background-color: white;
+    height: 50px;
+    font-size: 24px;
+    width: auto;
+    font-weight:lighter;
+}
+
+h1{
+    color: red;
+}
+.pic{
+    margin: 25px;
+    width: 400px;
+    height:300px;
+    
+            
+}
