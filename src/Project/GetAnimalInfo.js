@@ -42,6 +42,7 @@ const GetAnimalInfo = () => {
       if (response.ok) {
         const Bdata = await response.json();
         setDogImage(Bdata.message);
+        setBreed([]);
         console.log("Main Api is working");
       } else console.log("Main Api is Not Working");
     }
@@ -71,17 +72,17 @@ const GetAnimalInfo = () => {
   // console.log(Image);
 
   // console.log(BreedImage);
-  let y =[];
-  let x;
-  // console.log(Animals);
-  if (Image && BreedImage !== null) {
-    x = breedCategory;
-  } else if (Image || BreedImage === null) {
-    x = imageCategory;
-    // setBreedImage("");
-  }
-  console.log(Array.isArray(Animals[Image]) && Animals[Image].length); // Name of the Selected Breed
-  console.log(BreedImage);
+//   let y =[];
+//   let x;
+//   // console.log(Animals);
+//   if (Image && BreedImage !== null) {
+//     x = breedCategory;
+//   } else if (Image || BreedImage === null) {
+//     x = imageCategory;
+//     // setBreedImage("");
+//   }
+//   console.log(Array.isArray(Animals[Image]) && Animals[Image].length); // Name of the Selected Breed
+//   console.log(BreedImage);
   return (
     <>
       <div id="header">
@@ -131,8 +132,8 @@ const GetAnimalInfo = () => {
         </div>
       </div>
 
-      {console.log("b =" + breedCategory.length)}
-      {console.log("i=" + imageCategory.length)}
+//       {console.log("b =" + breedCategory.length)}
+//       {console.log("i=" + imageCategory.length)}
 
       
       {breedCategory.length <= 0 ? (
