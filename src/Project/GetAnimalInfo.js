@@ -14,19 +14,8 @@ const GetAnimalInfo = () => {
     const data = await response.json();
 
     setAnimals(data.message);
-    // console.log(data.message.array);
-
-    // const data=await response.json();
-    // console.log(data.message);
-  };
-  // const GetAnimalImagesApi = async () => {
-  //   const response = await fetch(`https://dog.ceo/api/breed/${Image}/images`);
-
-  //   const Idata = await response.json();
-  //   setDogImage(Idata.message);
-  //   // console.log(Idata.message);
-  // };
-
+   };
+  
   const GetBreedApi = async () => {
     let response = await fetch(
       `https://dog.ceo/api/breed/${Image}/${BreedImage}/images`
@@ -35,15 +24,12 @@ const GetAnimalInfo = () => {
     if (response.ok) {
       const Bdata = await response.json();
       setBreed(Bdata.message);
-      console.log("Breed Api is Working");
     } else {
-      console.log(" Breed Api is Not Working");
       response = await fetch(`https://dog.ceo/api/breed/${Image}/images`);
       if (response.ok) {
         const Bdata = await response.json();
         setDogImage(Bdata.message);
         setBreed([]);
-        console.log("Main Api is working");
       } else console.log("Main Api is Not Working");
     }
   };
@@ -56,9 +42,6 @@ const GetAnimalInfo = () => {
     GetAnimalApi();
   }, []);
 
-  // useEffect(() => {
-  //   GetAnimalImagesApi();
-  // }, [Image]);
   for (const key in Animals) {
     animalsCategory.push(key);
   }
@@ -69,20 +52,6 @@ const GetAnimalInfo = () => {
   for (const key in Breed) {
     breedCategory.push(Breed[key]);
   }
-  // console.log(Image);
-
-  // console.log(BreedImage);
-//   let y =[];
-//   let x;
-//   // console.log(Animals);
-//   if (Image && BreedImage !== null) {
-//     x = breedCategory;
-//   } else if (Image || BreedImage === null) {
-//     x = imageCategory;
-//     // setBreedImage("");
-//   }
-//   console.log(Array.isArray(Animals[Image]) && Animals[Image].length); // Name of the Selected Breed
-//   console.log(BreedImage);
   return (
     <>
       <div id="header">
@@ -101,14 +70,10 @@ const GetAnimalInfo = () => {
             })}
           </select>
 
-          {/* <select name="demo" id="demo">
-              <option value="Doggy">Doggy</option>
-              </select> */}
 
           <div>
             {Animals[Image] && (
               <select name="category" className="category">
-                {/* <option key="None" value="None" selected>None</option> */}
                 {Animals[Image].map((curElem) => {
                   return (
                     <option
@@ -132,10 +97,7 @@ const GetAnimalInfo = () => {
         </div>
       </div>
 
-//       {console.log("b =" + breedCategory.length)}
-//       {console.log("i=" + imageCategory.length)}
-
-      
+  
       {breedCategory.length <= 0 ? (
         <div className="Container">
           
